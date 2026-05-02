@@ -1,36 +1,29 @@
 RSS_URLS = [
-    # JETROニュース
-    "https://www.jetro.go.jp/rss/news.xml",
+    "https://news.google.com/rss/search?q=ドイツ留学&hl=ja&gl=JP&ceid=JP:ja",
+    "https://news.google.com/rss/search?q=ドイツ+ビザ&hl=ja&gl=JP&ceid=JP:ja",
+    "https://news.google.com/rss/search?q=ドイツ+生活&hl=ja&gl=JP&ceid=JP:ja",
+    "https://news.google.com/rss/search?q=ドイツ+大学&hl=ja&gl=JP&ceid=JP:ja",
 
-    # Google News: ドイツ留学
-    "https://news.google.com/rss/search?q=%E3%83%89%E3%82%A4%E3%83%84%E7%95%99%E5%AD%A6&hl=ja&gl=JP&ceid=JP:ja",
-
-    # Google News: Germany student visa
     "https://news.google.com/rss/search?q=Germany+student+visa&hl=en&gl=US&ceid=US:en",
+    "https://news.google.com/rss/search?q=Germany+residence+permit&hl=en&gl=US&ceid=US:en",
+    "https://news.google.com/rss/search?q=Germany+international+students&hl=en&gl=US&ceid=US:en",
+    "https://news.google.com/rss/search?q=Studying+in+Germany&hl=en&gl=US&ceid=US:en",
+    "https://news.google.com/rss/search?q=DAAD+students&hl=en&gl=US&ceid=US:en",
+    "https://news.google.com/rss/search?q=Bürgeramt+Anmeldung&hl=en&gl=US&ceid=US:en",
+    "https://news.google.com/rss/search?q=Studentenwerk+housing&hl=en&gl=US&ceid=US:en",
+    "https://news.google.com/rss/search?q=WG-Gesucht&hl=en&gl=US&ceid=US:en",
 
-    # Google News: DAAD
-    "https://news.google.com/rss/search?q=DAAD+international+students&hl=en&gl=US&ceid=US:en",
-
-    # Google News: Germany residence permit
-    "https://news.google.com/rss/search?q=Germany+residence+permit+students&hl=en&gl=US&ceid=US:en",
-
-    # Google News: ドイツ ビザ 留学生
-    "https://news.google.com/rss/search?q=%E3%83%89%E3%82%A4%E3%83%84+%E3%83%93%E3%82%B6+%E7%95%99%E5%AD%A6%E7%94%9F&hl=ja&gl=JP&ceid=JP:ja",
+    "https://news.google.com/rss/search?q=Studium+in+Deutschland&hl=de&gl=DE&ceid=DE:de",
+    "https://news.google.com/rss/search?q=Visum+Deutschland+Studenten&hl=de&gl=DE&ceid=DE:de",
+    "https://news.google.com/rss/search?q=Aufenthaltstitel+Studenten&hl=de&gl=DE&ceid=DE:de",
+    "https://news.google.com/rss/search?q=Anmeldung+Deutschland&hl=de&gl=DE&ceid=DE:de",
+    "https://news.google.com/rss/search?q=Wohnungssuche+Studenten+Deutschland&hl=de&gl=DE&ceid=DE:de",
 ]
 
-KEYWORDS = [
-    "ドイツ",
-    "留学",
-    "student visa",
-    "residence permit",
-    "DAAD",
-    "Anmeldung",
-    "Bürgeramt",
-    "health insurance",
-    "AOK",
-    "TK",
-    "Barmer",
-    "Studentenwerk",
-    "WG",
-    "university",
-]
+# 空にすると、RSSで取得できた記事をすべて通知対象にする
+# 情報が集まらない時は空のままがおすすめ
+KEYWORDS = []
+
+# 何時間以内の記事だけ通知するか
+# 168 = 1週間以内
+MAX_ARTICLE_AGE_HOURS = 168
