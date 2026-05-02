@@ -1,0 +1,40 @@
+name: Info Collect Bot
+
+on:
+  schedule:
+    - cron: "*/5 * * * *"
+  workflow_dispatch:
+
+jobs:
+  run-bot:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+
+      - name: Run bot
+        env:
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+        run: |
+          python main.py
+
+      - name: Commit seen file
+        run: |
+          git config user.name "info-bot"
+          git config user.email "info-bot@example.com"
+          git add seen.json
+          git commit -m "Update seen articles" || echo "No changes to commit"
+          git push
